@@ -24,8 +24,8 @@ h1, #buttons {
 	border-radius: 20px;
 }
 
-#sketch-outline {
-	width: 65%;
+#sketchOutline {
+	width: 85%;
 	height: 65%;
 	border: solid black 5px;
 	margin-left: auto;
@@ -36,14 +36,9 @@ h1, #buttons {
 
 /* buttons individual */
 
-#classic {
-	background-color: #404040;
-	color: #ffffff;
-	border: none;
-}
-#colorful {
-	background-color: yellow;
-	color: green;
+#start {
+	background-color: #ffff00;
+	color: red;
 	border: none;
 }
 #reset {
@@ -51,7 +46,28 @@ h1, #buttons {
 	color: #000000;
 	border: none;
 }
+#classicActive {
+	background-color: #404040;
+	color: #ffffff;
+	border: none;
+}
 
+#colorfulActive {
+	background-color: rebeccapurple;
+	color: yellow;
+	border: none;
+}
+#classicInactive, #colorfulInactive {
+	background-color: #a6a6a6;
+	color: #0d0d0d;
+	border: none;
+}
+
+
+/* -------------------*/
+.gridSquare {
+	background-color: black;
+}
 
 
 
