@@ -1,4 +1,4 @@
-//let sketchArea = 16;
+let sketchArea = 16;
 //let color = black;
 //let opacity = 10%;
 
@@ -6,14 +6,17 @@
 function divGrid (v) {
 	let e = document.getElementById("sketchOutline");
 	for (i = 0; i < v; i++) {
-		let row = document.createElement("div");
-		row.className = "row";
 		for (x = 1; x <= v; x++) {
 			let cell = document.createElement("div");
-			cell.className = "gridSquare";
-			row.appendChild(cell);
+			let gridSize = 600 / sketchArea;
+			console.log(gridSize);
+			cell.setAttribute("class", "cell");
+			cell.setAttribute("style", "width: " + gridSize + "px; height: " + gridSize +"px;");
+			sketchOutline.appendChild(cell);
+//			gridHover(cell);
+//			clearGrid(cell);
+//			newGrid(cell);
 		}
-		e.appendChild(row);
 	}
 }
 
