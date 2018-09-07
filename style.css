@@ -68,7 +68,7 @@ h1, #buttons {
 .cell {
 	float: left;
 	box-sizing: border-box;
-	border: solid black 1px;
+	border: solid green 1px;
 }
 
 
