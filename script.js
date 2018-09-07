@@ -19,7 +19,7 @@ function divGrid (v) {
 		
 			cell.addEventListener ("mouseover", function (event) {
 				console.log('what?');
-				event.target.style.opacity = (+ 0.5);
+				event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
 			});
 		}
 	}
