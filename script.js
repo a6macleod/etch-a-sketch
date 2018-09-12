@@ -26,17 +26,47 @@ function divGrid (v) {
 }
 
 function activateButtons() {
-	document.getElementById("classicInactive").id = "classicActive";
-	document.getElementById("colorfulInactive").id = "colorfulActive";
-	document.getElementById("start").innerHTML = "Reset";
-	document.getElementById("start").id = "reset";
+	document.querySelector(".classic").setAttribute("class", "classicActive");
+	document.querySelector(".colorful").setAttribute("class", "colorfulActive");
+	document.querySelector(".reset").setAttribute("class", "resetActive");
+	document.querySelector(".start").setAttribute("class", "startInactive");
 }
 
 
+// Adds the RESET to the button
+let re = document.querySelector("#reset");
+re.addEventListener ("click", function (event) {
+	console.log("reset clicked");
+	colorOpacity = 0;
+	let sketchOutline = document.querySelector("#sketchOutline");
+	while (sketchOutline.firstChild) {
+		sketchOutline.removeChild(sketchOutline.firstChild)
+	};
+
+//	resizeGrid();
+});
+
+//function clearOpacity() {
+//	colorOpacity = 0;
+//	let cellClear = document.querySelectorAll(".cell");//.style.opacity = "0";
+//	console.log(cellClear.length);
+//	cell.setAttribute("style", "opacity: " + colorOpacity + ";");
+//}	
+//	let gridUpdate = prompt("Pick a grid size 1-100!", "16");
+//	if (gridUpdate === null || gridUpdate === NaN || gridUpdate < 1 || gridUpdate > 100) {
+//		colorOpacity = 0;
+//		divGrid(16);
+//	} else {
+//		let userChoice = parseFloat(gridUpdate);
+//		divGrid(userChoice);
+
+//	}
 
 
-// 1) start button changes to reset button
-// 2) 
+
+// 1) 
+// 2) reset button clears the grid
 // 3) classic and Colorful buttons turn on from grey
 // 4) Reset button prompts up to allow the modification of the grid size
-// 5) reset button clears the colors but not the grid
+// 5) 
+

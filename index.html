@@ -3,7 +3,7 @@
 <head>
 	<title>Etch-a-Sketch</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script rel="script" type="text/javascript" src="script.js"></script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -13,15 +13,18 @@
 	<p>Use your mouse to draw on the etch-a-sketch. Press the color button to change the colors!</p>
 
 	<div id="buttons">
-		<button class="button" type="button" id ="classicInactive" onclick="#">Classic</button>
-		<button class="button" type="button" id ="start" onclick = "divGrid(16); activateButtons()">Start</button>
-		<button class="button" type="button" id ="colorfulInactive" onclick="#">Colorful</button>
+		<button class="button classic" type="button" id ="classic" onclick="#">Classic</button>
+		<button class="button start" type="button" id ="start" onclick = "divGrid(16); activateButtons()">Start</button>
+		<button class="button reset" type="button" id = "reset" >Reset</button>
+		<button class="button colorful" type="button" id ="colorful" onclick="#">Colorful</button>
 
 	</div>
 
 	<div id="sketchOutline">
 		
 	</div>
+
+	<script rel="script" type="text/javascript" src="script.js"></script>	
 
 </body>
 

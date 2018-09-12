@@ -19,7 +19,7 @@ h1, #buttons {
 
 #buttons button {
 	font-size: 15px; 
-	margin: 5px 35px;
+	margin: 5px 25px;
 	padding: 25px;
 	border-radius: 20px;
 }
@@ -36,28 +36,28 @@ h1, #buttons {
 
 /* buttons individual */
 
-#start {
+.start {
 	background-color: #ffff00;
 	color: red;
 	border: none;
 }
-#reset {
-	background-color: #808080;
-	color: #000000;
+.resetActive {
+	background-color: #7733ff;
+	color: #ff944d;
 	border: none;
 }
-#classicActive {
+.classicActive {
 	background-color: #404040;
 	color: #ffffff;
 	border: none;
 }
 
-#colorfulActive {
+.colorfulActive {
 	background-color: rebeccapurple;
 	color: yellow;
 	border: none;
 }
-#classicInactive, #colorfulInactive {
+.classic, .colorful, .startInactive, .reset {
 	background-color: #a6a6a6;
 	color: #0d0d0d;
 	border: none;
