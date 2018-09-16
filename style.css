@@ -57,7 +57,7 @@ h1, #buttons {
 	color: yellow;
 	border: none;
 }
-.classic, .colorful, .startInactive, .reset {
+.inactive{
 	background-color: #a6a6a6;
 	color: #0d0d0d;
 	border: none;
