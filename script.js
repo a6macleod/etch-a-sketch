@@ -1,18 +1,35 @@
-let sketchArea = 36;
-let gridColor = "black";
+let sketchArea = 16;
+let gridColor = "green";
 let colorOpacity = 0;
 
+createGrid();
 
-//let loadClassic = document.querySelector("#classic");
-//	loadClassic.classList.toggle("classicActive");
-//let loadColorful = document.querySelector("#colorful");
-//	loadColorful.classList.toggle("colorfulActive");
-//let loadStart = document.querySelector("#start");
-//	loadStart.classList.toggle("resetActive");
-
-let gridStart = document.querySelector("#start");
+// RESTART BUTTON CLICK
+let gridStart = document.querySelector("#reset");
 gridStart.addEventListener("click", function () { 
-	console.log("startClicked");
+	clearGrid()
+	resizeGrid(); 
+	});
+
+// CLASSIC button functionality 
+let classic = document.querySelector("#classic");
+	classic.addEventListener("click", function () {
+		console.log("Classic Button clicked");
+		gridColor = "black";
+		clearGrid();
+		createGrid();
+});
+
+// COLORFUL button functionality 
+//let colorful = document.querySelector("#colorful");
+//	colorful.addEventListener("click", function () {
+//		let diffColors = gridColor;
+//		blackColor = "black";
+//		createGrid();
+//	}); 	
+
+// CREAT NEW GRID
+function createGrid (){
 	let e = document.querySelector("#sketchOutline");
 	let size = sketchArea
 	for (i = 0; i < size; i++) {
@@ -21,8 +38,8 @@ gridStart.addEventListener("click", function () {
 			let cellSize = 600 / size;
 			console.log(cellSize);
 			cell.setAttribute("class", "cell");
-			cell.setAttribute("style", "width: " + cellSize + "px; height: " + cellSize +"px; background-color: "
-				+ gridColor + "; opacity: " + colorOpacity + ";");
+			cell.setAttribute("style", "width: " + cellSize + "px; height: " + cellSize +
+				"px; background-color: " + gridColor + "; opacity: " + colorOpacity + ";");
 			sketchOutline.appendChild(cell);
 			cell.addEventListener ("mouseover", function (event) {
 				console.log('what?');
@@ -30,57 +47,37 @@ gridStart.addEventListener("click", function () {
 			});
 		}
 	}
-	activateButtons();
-});
+}
 
-function activateButtons() {
-	let classic = document.querySelector("#classic");
-		classic.classList.toggle("inactive");
-		classic.classList.toggle("classicActive");
-	let start = document.querySelector("#start");
-		start.classList.toggle("start");
-		start.classList.toggle("resetActive");
-	let colorful = document.querySelector("#colorful");
-		colorful.classList.toggle("inactive");
-		colorful.classList.toggle("colorfulActive");
-//	document.querySelector("#start").setAttribute("class", "startInactive");
-	//let gridStart = 
-	//	gridStart.innerHTML = "Reset";
+// CLEAR GRID
+function clearGrid() {
+	console.log("reset clicked");
+	colorOpacity = 0;
+	let sketchOutline = document.querySelector("#sketchOutline");
+	while (sketchOutline.firstChild) {
+		sketchOutline.removeChild(sketchOutline.firstChild)
+	};
+
+}
+
+function resizeGrid(){
+	let gridUpdate = window.prompt("Pick a grid size 1-100!", "16");
+	let userChoice = parseInt(gridUpdate);
+	console.log(userChoice);
+	if (userChoice === null || userChoice === NaN || userChoice < 1 || userChoice > 100) {
+		createGrid();
+	} else {
+		sketchArea = userChoice;
+		console.log(sketchArea)
+		createGrid();
+
+	}
 }
 
 
-// Adds the RESET functionality to reset button
-//let re = document.querySelector("#reset");
-//re.addEventListener ("click", function (event) {
-//	console.log("reset clicked");
-//	colorOpacity = 0;
-//	let sketchOutline = document.querySelector("#sketchOutline");
-//	while (sketchOutline.firstChild) {
-//		sketchOutline.removeChild(sketchOutline.firstChild)
-//	};
-//
-//	resizeGrid();
-//});
-//
-//function resizeGrid(){
-//	let gridUpdate = window.prompt("Pick a grid size 1-100!", "16");
-//	let userChoice = parseInt(gridUpdate);
-//	if (userChoice === null || userChoice === NaN || userChoice < 1 || userChoice > 100) {
-////		colorOpacity = 0;
-//
-//		divGrid(16);
-//	} else {
-//		let userChoice = parseInt(gridUpdate);
-//		userChoice = sketchArea;
-//		divGrid(sketchArea);
-//
-//	}
-//}
-
-
-// 1) Reset button prompts to allow the modification of the grid size
-// 2) Classic button changes the colors to black/white
-// 3) Colorful button adds random colors 
-// 4) Start button disapears
-// 5) reset button appears after clicking start button
+// 1) Colorful button adds random colors 
+// 2) Classic button changes cell color to black without clearing grid
+// 3) 
+// 4) 
+// 5) 
 

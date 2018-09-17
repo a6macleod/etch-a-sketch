@@ -10,11 +10,20 @@
 
 body {
 	height: 800px;
+	background-color: #ccf2ff;
 }
 
-h1, #buttons {
+h1 {
+	color: #0086b3;
+}
+ 
+p {
+	color:#0086b3;
+
+}
+
+h1, #buttons, p {
 	text-align: center;
-	background-color: red; /* Remove! added for visualization */
 }
 
 #buttons button {
@@ -22,45 +31,39 @@ h1, #buttons {
 	margin: 5px 25px;
 	padding: 25px;
 	border-radius: 20px;
+	border: solid #0086b3 2px;
 }
 
 #sketchOutline {
 	width: 600px;
 	height: 600px;
-	border: solid black 5px;
+	border: dotted #0086b3 5px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color:  #ffffff;
 }
 
 
 
 /* buttons individual */
 
-.start {
+.resetActive {
 	background-color: #ffff00;
 	color: red;
-	border: none;
 }
-.resetActive {
-	background-color: #7733ff;
-	color: #ff944d;
-	border: none;
-}
+
 .classicActive {
 	background-color: #404040;
 	color: #ffffff;
-	border: none;
 }
 
 .colorfulActive {
 	background-color: rebeccapurple;
 	color: yellow;
-	border: none;
 }
 .inactive{
 	background-color: #a6a6a6;
 	color: #0d0d0d;
-	border: none;
 }
 
 
