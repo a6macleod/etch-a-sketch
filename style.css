@@ -74,6 +74,13 @@ h1, #buttons, p {
 	border: solid green 1px;
 }
 
+.classicColor {
+	background-color: black;
+}
+
+.genericColor {
+	background-color: green
+}
 
 
 

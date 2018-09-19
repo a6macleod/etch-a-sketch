@@ -2,6 +2,7 @@ let sketchArea = 16;
 let gridColor = "green";
 let colorOpacity = 0;
 
+// BEGINNING GRID 16
 createGrid();
 
 // RESTART BUTTON CLICK
@@ -16,15 +17,19 @@ let classic = document.querySelector("#classic");
 	classic.addEventListener("click", function () {
 		console.log("Classic Button clicked");
 		gridColor = "black";
-		clearGrid();
-		createGrid();
+		let cell = document.querySelectorAll(".cell");
+		cell.forEach((cell) => {
+			cell.addEventListener("mouseover", function (event) {
+				event.target.style.backgroundColor = "black";
+			});
+		})
 });
 
 // COLORFUL button functionality 
 //let colorful = document.querySelector("#colorful");
 //	colorful.addEventListener("click", function () {
-//		let diffColors = gridColor;
-//		blackColor = "black";
+//		gridColor = randomColor();
+//		hoverCell; // This will add the hover functionality in colors!
 //		createGrid();
 //	}); 	
 
@@ -41,9 +46,10 @@ function createGrid (){
 			cell.setAttribute("style", "width: " + cellSize + "px; height: " + cellSize +
 				"px; background-color: " + gridColor + "; opacity: " + colorOpacity + ";");
 			sketchOutline.appendChild(cell);
+//			hoverCell();
 			cell.addEventListener ("mouseover", function (event) {
-				console.log('what?');
-				event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
+			console.log('what?');
+			event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
 			});
 		}
 	}
@@ -57,27 +63,25 @@ function clearGrid() {
 	while (sketchOutline.firstChild) {
 		sketchOutline.removeChild(sketchOutline.firstChild)
 	};
-
 }
 
+// RESIZE GRID
 function resizeGrid(){
 	let gridUpdate = window.prompt("Pick a grid size 1-100!", "16");
 	let userChoice = parseInt(gridUpdate);
 	console.log(userChoice);
 	if (userChoice === null || userChoice === NaN || userChoice < 1 || userChoice > 100) {
+		sketchArea = 16;
 		createGrid();
 	} else {
 		sketchArea = userChoice;
 		console.log(sketchArea)
 		createGrid();
-
 	}
 }
-
-
 // 1) Colorful button adds random colors 
-// 2) Classic button changes cell color to black without clearing grid
-// 3) 
-// 4) 
-// 5) 
+// 2) 
+// 3) From Prompt Null will resize grid back to 16
+// 4) From Prompt NaN will resize grid back to 16
+// 5) Colorful button changes cell color to colors without clearing the grid
 
