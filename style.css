@@ -8,6 +8,11 @@
 	padding: 0;
 }
 
+a {
+	color: #0000b3;
+	text-decoration: underline;
+}
+
 body {
 	height: 800px;
 	background-color: #ccf2ff;
@@ -43,8 +48,6 @@ h1, #buttons, p {
 	background-color:  #ffffff;
 }
 
-
-
 /* buttons individual */
 
 .resetActive {
@@ -67,19 +70,11 @@ h1, #buttons, p {
 }
 
 
-/* -------------------*/
+/* Etch-a-Sketch grid cell */
 .cell {
 	float: left;
 	box-sizing: border-box;
 	border: solid green 1px;
-}
-
-.classicColor {
-	background-color: black;
-}
-
-.genericColor {
-	background-color: green
 }
 
 
