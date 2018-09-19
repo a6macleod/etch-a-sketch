@@ -20,18 +20,25 @@ let classic = document.querySelector("#classic");
 		let cell = document.querySelectorAll(".cell");
 		cell.forEach((cell) => {
 			cell.addEventListener("mouseover", function (event) {
+				event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
 				event.target.style.backgroundColor = "black";
+
 			});
 		})
 });
 
 // COLORFUL button functionality 
-//let colorful = document.querySelector("#colorful");
-//	colorful.addEventListener("click", function () {
+let colorful = document.querySelector("#colorful");
+	colorful.addEventListener("click", function () {
 //		gridColor = randomColor();
-//		hoverCell; // This will add the hover functionality in colors!
-//		createGrid();
-//	}); 	
+		let cell = document.querySelectorAll(".cell");
+		cell.forEach((cell) => {
+			cell.addEventListener("mouseover", function (event) {
+				event.target.style.opacity = 1;
+				event.target.style.backgroundColor = randomColor();
+			})
+		})
+	}); 	
 
 // CREAT NEW GRID
 function createGrid (){
@@ -78,6 +85,15 @@ function resizeGrid(){
 		console.log(sketchArea)
 		createGrid();
 	}
+}
+
+function randomColor () {
+	let letters = "0123456789ABCDEF";
+	let color = "#";
+	for (i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() *16)];
+	}
+	return color;
 }
 // 1) Colorful button adds random colors 
 // 2) 
