@@ -15,7 +15,6 @@ gridStart.addEventListener("click", function () {
 // CLASSIC button functionality 
 let classic = document.querySelector("#classic");
 	classic.addEventListener("click", function () {
-		console.log("Classic Button clicked");
 		gridColor = "black";
 		let cell = document.querySelectorAll(".cell");
 		cell.forEach((cell) => {
@@ -30,7 +29,6 @@ let classic = document.querySelector("#classic");
 // COLORFUL button functionality 
 let colorful = document.querySelector("#colorful");
 	colorful.addEventListener("click", function () {
-//		gridColor = randomColor();
 		let cell = document.querySelectorAll(".cell");
 		cell.forEach((cell) => {
 			cell.addEventListener("mouseover", function (event) {
@@ -77,7 +75,7 @@ function resizeGrid(){
 	let gridUpdate = window.prompt("Pick a grid size 1-100!", "16");
 	let userChoice = parseInt(gridUpdate);
 	console.log(userChoice);
-	if (userChoice === null || userChoice === NaN || userChoice < 1 || userChoice > 100) {
+	if (userChoice === null ||  isNaN(userChoice) || userChoice < 1 || userChoice > 100) {
 		sketchArea = 16;
 		createGrid();
 	} else {
@@ -95,9 +93,4 @@ function randomColor () {
 	}
 	return color;
 }
-// 1) Colorful button adds random colors 
-// 2) 
-// 3) From Prompt Null will resize grid back to 16
-// 4) From Prompt NaN will resize grid back to 16
-// 5) Colorful button changes cell color to colors without clearing the grid
 
