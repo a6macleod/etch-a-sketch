@@ -7,12 +7,12 @@ createGrid();
 
 // RESTART BUTTON CLICK
 let gridStart = document.querySelector("#reset");
-gridStart.addEventListener("click", function () { 
+gridStart.addEventListener("click", function () {
 	clearGrid()
-	resizeGrid(); 
+	resizeGrid();
 	});
 
-// CLASSIC button functionality 
+// CLASSIC button functionality
 let classic = document.querySelector("#classic");
 	classic.addEventListener("click", function () {
 		gridColor = "black";
@@ -26,7 +26,7 @@ let classic = document.querySelector("#classic");
 		})
 });
 
-// COLORFUL button functionality 
+// COLORFUL button functionality
 let colorful = document.querySelector("#colorful");
 	colorful.addEventListener("click", function () {
 		let cell = document.querySelectorAll(".cell");
@@ -36,7 +36,7 @@ let colorful = document.querySelector("#colorful");
 				event.target.style.backgroundColor = randomColor();
 			})
 		})
-	}); 	
+	});
 
 // CREAT NEW GRID
 function createGrid (){
@@ -46,14 +46,11 @@ function createGrid (){
 		for (x = 1; x <= size; x++) {
 			let cell = document.createElement("div");
 			let cellSize = 600 / size;
-			console.log(cellSize);
 			cell.setAttribute("class", "cell");
 			cell.setAttribute("style", "width: " + cellSize + "px; height: " + cellSize +
 				"px; background-color: " + gridColor + "; opacity: " + colorOpacity + ";");
 			sketchOutline.appendChild(cell);
-//			hoverCell();
 			cell.addEventListener ("mouseover", function (event) {
-			console.log('what?');
 			event.target.style.opacity = parseFloat(event.target.style.opacity) + 0.1;
 			});
 		}
@@ -62,7 +59,6 @@ function createGrid (){
 
 // CLEAR GRID
 function clearGrid() {
-	console.log("reset clicked");
 	colorOpacity = 0;
 	let sketchOutline = document.querySelector("#sketchOutline");
 	while (sketchOutline.firstChild) {
@@ -74,13 +70,11 @@ function clearGrid() {
 function resizeGrid(){
 	let gridUpdate = window.prompt("Pick a grid size 1-100!", "16");
 	let userChoice = parseInt(gridUpdate);
-	console.log(userChoice);
 	if (userChoice === null ||  isNaN(userChoice) || userChoice < 1 || userChoice > 100) {
 		sketchArea = 16;
 		createGrid();
 	} else {
 		sketchArea = userChoice;
-		console.log(sketchArea)
 		createGrid();
 	}
 }
@@ -89,8 +83,7 @@ function randomColor () {
 	let letters = "0123456789ABCDEF";
 	let color = "#";
 	for (i = 0; i < 6; i++) {
-		color += letters[Math.floor(Math.random() *16)];
+		color += letters[Math.floor(Math.random() * 16)];
 	}
 	return color;
 }
-
